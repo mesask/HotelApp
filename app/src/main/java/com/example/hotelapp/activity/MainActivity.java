@@ -1,5 +1,6 @@
 package com.example.hotelapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import com.example.hotelapp.data.local.UserSharePreference;
 public class MainActivity extends BaseActivity {
     //private ImageView imageView;
     private ImageView imageViewww;
-    private Button btnLogout;
+    private Button btnLogout,btnDemoRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity {
             return insets;
         });
         imageViewww = findViewById(R.id.imageView);
+        btnDemoRecyclerView = findViewById(R.id.btnDemoRecyclerView);
         Glide.with(this).load("https://bbu.edu.kh/assets/images/logo.png").into(imageViewww);
         btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,14 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 //UserSharePreference.removeUserData(LoginActivity.this);
                 logout();
+            }
+        });
+
+        btnDemoRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DemoRecycleViewActivity.class);
+                startActivity(intent);
             }
         });
     }
