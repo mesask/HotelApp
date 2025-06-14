@@ -19,6 +19,13 @@ import java.util.List;
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHolder>{
     private final Context context;
     private final List<Hotel> hotelList;
+    private OnClickListener onClickListener;
+
+    public HotelAdapter(Context context, List<Hotel> hotelList, OnClickListener onClickListener) {
+        this.context = context;
+        this.hotelList = hotelList;
+        this.onClickListener = onClickListener;
+    }
 
     public HotelAdapter(Context context, List<Hotel> hotelList) {
         this.context = context;
@@ -50,6 +57,12 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
             Glide.with(context).load(hotel.getImageUrl()).into(holder.ivHotelImage);
             //holder.tvHotelName.setText(hotel.getName());
         }
+        holder.ivView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickListener.onClickView(v, hotel);
+            }
+        });
     }
 
     @Override
@@ -72,5 +85,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.HotelViewHol
             ivShare = itemView.findViewById(R.id.ivShare);
             ivView = itemView.findViewById(R.id.ivView);
         }
+    }
+
+    public interface OnClickListener{
+        void onClickView(View view, Hotel data);
     }
 }

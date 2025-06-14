@@ -12,4 +12,19 @@ public final class Constants {
     public static final String USER_NAME_DATA = "admin";
 
     public static final String USER_PASSWORD_DATA = "123";
+
+
+    public static final String HOTEL_ID = "HOTEL_ID";
+
+    public static final String HOTEL_NAME = "HOTEL_NAME";
+
+    public static final String HOTEL_IMAGE = "HOTEL_IMAGE";
+
+    public static final String HOTEL_DESC = "HOTEL_DESC";
+
+    public static final String HOTEL_TOTAL_VIEW = "HOTEL_TOTAL_VIEW";
+
+    public static final String HOTEL_TOTAL_SHARE = "HOTEL_TOTAL_SHARE";
+
+    public static final String HOTEL_TOTAL_LOCATION = "HOTEL_TOTAL_LOCATION";
 }
