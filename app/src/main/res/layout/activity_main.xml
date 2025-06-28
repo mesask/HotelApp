@@ -37,4 +37,14 @@
         app:layout_constraintStart_toStartOf="@id/btnLogout"
         app:layout_constraintEnd_toEndOf="@id/btnLogout" />
 
+    <Button
+        android:id="@+id/btnProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="List Product Online Store"
+        app:layout_constraintBottom_toTopOf="@+id/btnDemoRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

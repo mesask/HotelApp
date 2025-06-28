@@ -17,8 +17,9 @@ import com.example.hotelapp.data.local.UserSharePreference;
 
 public class MainActivity extends BaseActivity {
     //private ImageView imageView;
+//    private APiInterface aPiInterface;
     private ImageView imageViewww;
-    private Button btnLogout,btnDemoRecyclerView;
+    private Button btnLogout,btnDemoRecyclerView, btnProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,26 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+        btnProduct = findViewById(R.id.btnProduct);
+        btnProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
+            }
+        });
+//        aPiInterface = ApiClient.getClient().create(APiInterface.class);
+//        aPiInterface.getAllProduct().enqueue(new Callback<List<ProductsItem>>() {
+//            @Override
+//            public void onResponse(Call<List<ProductsItem>> call, Response<List<ProductsItem>> response) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<ProductsItem>> call, Throwable t) {
+//
+//            }
+//        });
     }
     private void logout(){
         UserSharePreference.removeUserData(this);
